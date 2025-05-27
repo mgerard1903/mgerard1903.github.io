@@ -28,31 +28,47 @@ const Portfolio = () => {
       icon: '🛡️', 
       count: 4, 
       color: '#00fffc',
-      projects: ['Toxicity Detection', 'Bias Analysis', 'Mental Health', 'Online Safety']
+      projects: [
+        { name: 'Toxicity Detection', url: 'https://github.com/mgerard1903/moderation_solution' },
+        { name: 'NYC Bias Police Analysis', url: 'https://github.com/mgerard1903/nyc_police_arrestation_project' },
+        { name: 'Mental Health', url: 'https://github.com/mgerard1903/predicting_depression' },
+        { name: 'Reddit Community Deep Dive', url: 'https://github.com/mgerard1903/understanding_network' }
+      ]
     },
     { 
       id: 'health', 
       title: 'Healthcare AI', 
       icon: '🧬', 
-      count: 3, 
+      count: 2, 
       color: '#fc00ff',
-      projects: ['Cancer Detection', 'Emergency Response', 'Patient Evacuation']
+      projects: [
+        { name: 'Cancer Detection', url: 'https://github.com/mgerard1903/breast-cancer-svm' },
+        { name: 'Emergency Evacuation Planning', url: 'https://github.com/mgerard1903/huricane_prevention' }
+      ]
     },
     { 
       id: 'business', 
-      title: 'Business Analytics', 
+      title: 'Business/Marketing Analytics', 
       icon: '📊', 
-      count: 3, 
+      count: 4, 
       color: '#fffc00',
-      projects: ['Revenue Optimization', 'Rating Prediction', 'Market Analysis']
+      projects: [
+        { name: 'Revenue Optimization', url: 'https://github.com/mgerard1903/mardown_prediction' },
+        { name: 'Pricing Optimization', url: 'https://github.com/mgerard1903/airbnb_dynamic_pricing' },
+        { name: 'Movie Rating Prediction', url: 'https://github.com/mgerard1903/movie_rating_prediction' },
+        { name: 'Market Analysis', url: 'https://github.com/mgerard1903/chocolate_analysis' }
+      ]
     },
     { 
-      id: 'vision', 
-      title: 'Computer Vision', 
+      id: 'fraud', 
+      title: 'Fraud Prevention', 
       icon: '🔍', 
       count: 2, 
       color: '#ff6b6b',
-      projects: ['Real-time Detection', 'Security Systems']
+      projects: [
+        { name: 'Real-time Detection', url: 'https://github.com/mgerard1903/Financial-fraud' },
+        { name: 'Firearms Detection in Videos', url: 'https://github.com/mgerard1903/video_detection' }
+      ]
     },
     { 
       id: 'nlp', 
@@ -60,7 +76,12 @@ const Portfolio = () => {
       icon: '💬', 
       count: 4, 
       color: '#4ecdc4',
-      projects: ['Sentiment Analysis', 'Topic Modeling', 'Content Moderation', 'Transformers']
+      projects: [
+        { name: 'Sentiment Analysis', url: 'https://github.com/mgerard1903/sentiment-analysis' },
+        { name: 'Topic Modeling', url: 'https://github.com/mgerard1903/reddit-topic-modeling' },
+        { name: 'Content Moderation', url: 'https://github.com/mgerard1903/content-moderation' },
+        { name: 'Transformers', url: 'https://github.com/mgerard1903/bert-reddit-classifier' }
+      ]
     },
     { 
       id: 'network', 
@@ -68,7 +89,10 @@ const Portfolio = () => {
       icon: '🌐', 
       count: 2, 
       color: '#95e1d3',
-      projects: ['Social Graphs', 'Viral Prediction']
+      projects: [
+        { name: 'Social Graphs', url: 'https://github.com/mgerard1903/reddit-network-analysis' },
+        { name: 'Viral Prediction', url: 'https://github.com/mgerard1903/viral-content-prediction' }
+      ]
     }
   ];
 
@@ -145,6 +169,9 @@ const Portfolio = () => {
           <p className="text-2xl text-gray-300 animate-pulse">
             Transforming Raw Data into Digital Gold
           </p>
+          <p className="text-xl text-gray-400 mt-4">
+            Margot Gerard Portfolio
+          </p>
         </div>
       </div>
 
@@ -199,13 +226,16 @@ const Portfolio = () => {
                 {activeCategory === category.id && (
                   <div className="mt-4 space-y-2 animate-slideIn">
                     {category.projects.map((project, idx) => (
-                      <div 
+                      <a
                         key={idx} 
-                        className="text-sm text-gray-300 pl-4 border-l-2 border-cyan-500"
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block text-sm text-gray-300 pl-4 border-l-2 border-cyan-500 hover:text-cyan-400 hover:border-cyan-400 transition-colors cursor-pointer"
                         style={{ animationDelay: `${idx * 50}ms` }}
                       >
-                        {project}
-                      </div>
+                        {project.name} →
+                      </a>
                     ))}
                   </div>
                 )}
