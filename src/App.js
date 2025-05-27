@@ -42,7 +42,7 @@ const Portfolio = () => {
       count: 2, 
       color: '#fc00ff',
       projects: [
-        { name: 'Cancer Detection', url: 'https://github.com/mgerard1903/breast-cancer-svm' },
+        { name: 'Cancer Detection', url: 'https://github.com/mgerard1903/SVM_project' },
         { name: 'Emergency Evacuation Planning', url: 'https://github.com/mgerard1903/huricane_prevention' }
       ]
     },
@@ -66,32 +66,8 @@ const Portfolio = () => {
       count: 2, 
       color: '#ff6b6b',
       projects: [
-        { name: 'Real-time Detection', url: 'https://github.com/mgerard1903/Financial-fraud' },
+        { name: 'Financial Fraud Detection', url: 'https://github.com/mgerard1903/Financial-fraud' },
         { name: 'Firearms Detection in Videos', url: 'https://github.com/mgerard1903/video_detection' }
-      ]
-    },
-    { 
-      id: 'nlp', 
-      title: 'NLP & Text Mining', 
-      icon: '💬', 
-      count: 4, 
-      color: '#4ecdc4',
-      projects: [
-        { name: 'Sentiment Analysis', url: 'https://github.com/mgerard1903/sentiment-analysis' },
-        { name: 'Topic Modeling', url: 'https://github.com/mgerard1903/reddit-topic-modeling' },
-        { name: 'Content Moderation', url: 'https://github.com/mgerard1903/content-moderation' },
-        { name: 'Transformers', url: 'https://github.com/mgerard1903/bert-reddit-classifier' }
-      ]
-    },
-    { 
-      id: 'network', 
-      title: 'Network Analysis', 
-      icon: '🌐', 
-      count: 2, 
-      color: '#95e1d3',
-      projects: [
-        { name: 'Social Graphs', url: 'https://github.com/mgerard1903/reddit-network-analysis' },
-        { name: 'Viral Prediction', url: 'https://github.com/mgerard1903/viral-content-prediction' }
       ]
     }
   ];
@@ -233,6 +209,7 @@ const Portfolio = () => {
                         rel="noopener noreferrer"
                         className="block text-sm text-gray-300 pl-4 border-l-2 border-cyan-500 hover:text-cyan-400 hover:border-cyan-400 transition-colors cursor-pointer"
                         style={{ animationDelay: `${idx * 50}ms` }}
+                        onClick={(e) => e.stopPropagation()}
                       >
                         {project.name} →
                       </a>
